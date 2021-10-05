@@ -1,0 +1,15 @@
+.item {
+    background-color: #91350E;
+    color: #ffffff;
+    width: 11rem;
+    height: 4em;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    list-style-type: none;
+
+}

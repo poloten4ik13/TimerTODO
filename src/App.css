@@ -21,12 +21,8 @@
     cursor: pointer;
     letter-spacing: 2px;
     border: none;
-    outline: none;
     box-shadow: none;
-
-
-
-
+    outline: none;
 }
 .stud:hover{
     background-color: gray;
@@ -37,3 +33,11 @@
     margin-left: -45px;
 
 }
+.header {
+    color: #EB4401;
+    display: grid;
+    justify-content: center;
+    font-size: 42px;
+    font-family: Goblin One, sans-serif;
+}
+
