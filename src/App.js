@@ -1,17 +1,42 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect,  useState} from 'react';
 import "./App.css";
-import Counter from "./Counter";
-import Draggable from 'react-draggable';
 import Form from "./Form";
 import List from "./List"
 
 
 const App = () => {
     /*Input state*/
+
+    useEffect(() => {
+        LocalButtonHandler();
+    }, []);
+
+
     const [inputText, setInputText] = useState("");
-    const [buttonHandler, setButtonHandler] = useState([]);
+    const [buttonHandler, setButtonHandler] = useState( []);
+
+    const localButton = () => {
+      localStorage.setItem('buttonHandler', JSON.stringify(buttonHandler));
+    }
+    useEffect(() => {
+        localButton();
+    }, [buttonHandler]);
+
+    const LocalButtonHandler = () =>{
+        if(localStorage.getItem('buttonHandler') === null){
+            localStorage.setItem('buttonHandler', JSON.stringify([]))
+        }else{
+            let LocalButton = JSON.parse(localStorage.getItem('buttonHandler'));
+            setButtonHandler(LocalButton)
+        }
+    };
+
+
+
+
+
     /*Draggable code start*/
-    const [positions, setPositions] = useState({});
+   /* const [positions, setPositions] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
     const nodeRef = useRef(null);
 
@@ -32,28 +57,27 @@ const App = () => {
     }
     useEffect(() => {
         localStorage.setItem(`positions_div`, JSON.stringify(positions));
-    }, [positions]);
+    }, [positions]);*/
     /*Draggable code end*/
-    return hasLoaded ? (
+    return /*hasLoaded ?*/ (
         <div>
             <header className="header">10 000 Hour</header>
             <div>
                 <Form setInputText={setInputText} buttonHandler={buttonHandler} setButtonHandler={setButtonHandler} inputText={inputText} />
             </div>
             <div className="container">
-                <Draggable
+                <List inputText={inputText} buttonHandler={buttonHandler} />
+               {/* <Draggable
                     defaultPosition={{x: positions.x, y: positions.y}}
                     nodeRef={nodeRef}
                     onStop={handleStop}
                 >
                     <div ref={nodeRef}>
-                        <List inputText={inputText} buttonHandler={buttonHandler} />
-                        <Counter/>
                     </div>
-                </Draggable>
+                </Draggable>*/}
             </div>
         </div>
-    ) : null;
+    )
 };
 
 export default App;

@@ -1,9 +1,12 @@
 .item {
     background-color: #91350E;
     color: #ffffff;
-    width: 11rem;
-    height: 4em;
-    font-size: 18px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 3em;
+    font-size: 22px;
     border-radius: 10px;
     cursor: pointer;
     letter-spacing: 2px;
