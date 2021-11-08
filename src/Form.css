@@ -1,0 +1,21 @@
+
+input {
+    all: unset;
+    background-color: white;
+    border-radius: 3%;
+    height: 24px;
+    width: 200px;
+
+}
+button {
+    all: unset;
+    color: #EB4401;
+    height: 24px;
+    cursor: pointer;
+    width: 75px;
+    text-align: center;
+}
+button:hover {
+    color: aqua;
+    border: #EB4401 solid 1px;
+}

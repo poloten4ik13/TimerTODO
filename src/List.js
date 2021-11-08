@@ -14,12 +14,9 @@ const List = ({buttonHandler}) => {
         localStorage.getItem("positions_div")
     );
     useEffect(() => {
-        setPositions(existingDivPositions);
+        setPositions(existingDivPositions === null ? {x: 0, y: 0} : existingDivPositions );
         setHasLoaded(true);
-        console.log("has loaded");
-        console.log(existingDivPositions)
     }, []);
-
 
     function handleStop(e, data) {
         let dummyPositions = { ...positions };
@@ -32,8 +29,8 @@ const List = ({buttonHandler}) => {
 
     useEffect(() => {
         localStorage.setItem(`positions_div`, JSON.stringify(positions));
-        console.log(positions)
     }, [positions]);
+
 
     return hasLoaded ? (
         <div>
@@ -42,7 +39,7 @@ const List = ({buttonHandler}) => {
                 return (
                     <>
                         <Draggable
-                            defaultPosition={positions[item.id] === undefined ? {x: 0, y: 0} : {x:positions[item.id].x, y: positions[item.id].y} }
+                            defaultPosition={positions[item.id] === undefined  ? {x: 0, y: 0} : {x:positions[item.id].x, y: positions[item.id].y}}
                             position={null}
                             key={item.id}
                             nodeRef={nodeRef}
