@@ -8,12 +8,15 @@ input {
 
 }
 button {
+
     all: unset;
     color: #EB4401;
     height: 24px;
     cursor: pointer;
     width: 75px;
     text-align: center;
+    box-sizing: border-box;
+
 }
 button:hover {
     color: aqua;

@@ -1,15 +1,16 @@
-import React, {useEffect,  useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import "./App.css";
 import Form from "./Form";
 import List from "./List"
+import {Context} from "./Context";
 
 
 const App = () => {
-    /*Input state*/
 
     useEffect(() => {
         LocalButtonHandler();
     }, []);
+
 
 
     const [inputText, setInputText] = useState("");
@@ -32,51 +33,18 @@ const App = () => {
     };
 
 
-
-
-
-    /*Draggable code start*/
-   /* const [positions, setPositions] = useState({});
-    const [hasLoaded, setHasLoaded] = useState(false);
-    const nodeRef = useRef(null);
-
-    useEffect(() => {
-        const existingDivPositions = JSON.parse(
-            localStorage.getItem("positions_div")
-        );
-        setPositions(existingDivPositions);
-        setHasLoaded(true);
-    }, []);
-
-    function handleStop(e, data) {
-        let dummyPositions = {...positions};
-        dummyPositions = {};
-        dummyPositions["x"] = data.x;
-        dummyPositions["y"] = data.y;
-        setPositions(dummyPositions);
-    }
-    useEffect(() => {
-        localStorage.setItem(`positions_div`, JSON.stringify(positions));
-    }, [positions]);*/
-    /*Draggable code end*/
-    return /*hasLoaded ?*/ (
+    return  (
+        <Context.Provider value={{buttonHandler, setButtonHandler}}>
         <div>
             <header className="header">10 000 Hour</header>
             <div>
                 <Form setInputText={setInputText} buttonHandler={buttonHandler} setButtonHandler={setButtonHandler} inputText={inputText} />
             </div>
             <div className="container">
-                <List inputText={inputText} buttonHandler={buttonHandler} />
-               {/* <Draggable
-                    defaultPosition={{x: positions.x, y: positions.y}}
-                    nodeRef={nodeRef}
-                    onStop={handleStop}
-                >
-                    <div ref={nodeRef}>
-                    </div>
-                </Draggable>*/}
+                  <List inputText={inputText} buttonHandler={buttonHandler} />
             </div>
         </div>
+        </Context.Provider>
     )
 };
 

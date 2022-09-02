@@ -1,43 +1,1 @@
-
-.container{
-    width: 1400px;
-    height: 780px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-image:url("./image/cover.jpg");
-    background-position: right 40% bottom 80%;;
-    background-size: cover;
-
-
-}
-.stud {
-    background-color: #91350E;
-    color: #ffffff;
-    width: 11rem;
-    height: 4em;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    letter-spacing: 2px;
-    border: none;
-    box-shadow: none;
-    outline: none;
-}
-.stud:hover{
-    background-color: gray;
-}
-.time{
-    color: white;
-    font-size: 80px;
-    margin-left: -45px;
-
-}
-.header {
-    color: #EB4401;
-    display: grid;
-    justify-content: center;
-    font-size: 42px;
-    font-family: Goblin One, sans-serif;
-}
-
+.container{    width:1400px;    height: 780px;   /* display: grid;    justify-content: center;    align-items: center;*/    background-image:url("./image/cover.jpg");    background-position: right 40% bottom 80%;;    background-size: cover;}.stud {    background-color: #91350E;    color: #ffffff;    width: 11rem;    height: 4em;    font-size: 18px;    border-radius: 10px;    cursor: pointer;    letter-spacing: 2px;    border: none;    box-shadow: none;}.stud:hover{    background-color: gray;}.time{    color: white;    font-size: 80px;    margin-left: -45px;}.header {    color: #EB4401;    display: grid;    justify-content: center;    font-size: 42px;    font-family: Goblin One, sans-serif;}

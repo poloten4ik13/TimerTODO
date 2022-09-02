@@ -4,8 +4,11 @@ import './Form.css';
 const Form = ({setInputText, buttonHandler, setButtonHandler, inputText}) => {
 const submitHandler = (e) => {
     e.preventDefault();
-    setButtonHandler([...buttonHandler, {text: inputText, id: Math.random() * 10 }]);
-    setInputText("");
+   if(inputText){
+       setButtonHandler([...buttonHandler, {text: inputText, id: Math.random() * 10 }]);
+       setInputText("");
+   }
+
     };
 
     const eventHandler = (e) => {
@@ -14,7 +17,7 @@ const submitHandler = (e) => {
     return (
         <div>
             <form className="inputForm">
-                <input value={inputText} onChange={eventHandler} type="text" className="inputForm"/>
+                <input value={inputText} onChange={eventHandler} type="text" className="inputForm" placeholder="Lesson" required/>
                 <button onClick={submitHandler}  type="submit" className="submitButton">
                     <i className="ibutton">Create</i>
                 </button>

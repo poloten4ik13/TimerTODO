@@ -3,7 +3,7 @@
     color: #ffffff;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     width: 12rem;
     height: 3em;
     font-size: 22px;
@@ -14,5 +14,24 @@
     box-shadow: none;
     outline: none;
     list-style-type: none;
+    top: 15rem;
 
+}
+.close:after{
+    content: "\00d7";
+    left: 10.5rem;
+    top: .3rem;
+    position: absolute;
+}
+.time {
+    position:absolute;
+    top: -80px;
+}
+.buttonItem {
+    width: 12rem;
+    height: 3em;
+}
+.react-draggable{
+    width: 0;
+    height: 0;
 }
